@@ -62,7 +62,7 @@ export class ApplicationService {
     updateApplication(application: Application): Observable<Application> {
 
         return this.http
-            .post(applicationUrl, application, {
+            .put(applicationUrl, application, {
                 headers: new HttpHeaders()
                     .append('Authorization', `Bearer ${localStorage.getItem('access_token')}`)
             })
